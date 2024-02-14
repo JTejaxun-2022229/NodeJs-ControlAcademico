@@ -1,0 +1,94 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "usuario collection",
+    "dateExported": "2024-02-14T22:55:22.424Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0a239058-754a-4c0f-bcf2-cc020f5c8f84",
+            "colId": "ea2dd4e4-20a3-49d3-8d2c-4aa26a72bc9a",
+            "containerId": "",
+            "name": "post usuario",
+            "url": "http://localhost:3000/api/usuarios",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-14T22:26:45.443Z",
+            "modified": "2024-02-14T22:45:58.084Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Yagamy Tejaxun\",\n  \"correo\": \"jtejaxun13@gmail.com\",\n  \"password\": \"PRUEBA1\",\n  \"role\": \"ALUMNO_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ed124dd0-ee47-4742-8b55-9e7991605165",
+            "colId": "ea2dd4e4-20a3-49d3-8d2c-4aa26a72bc9a",
+            "containerId": "",
+            "name": "get usuario",
+            "url": "http://localhost:3000/api/usuarios",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-14T22:39:50.676Z",
+            "modified": "2024-02-14T22:39:55.078Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "de707c1d-d8a3-4e1b-a9ec-c58f8a18de70",
+            "colId": "ea2dd4e4-20a3-49d3-8d2c-4aa26a72bc9a",
+            "containerId": "",
+            "name": "get usuario by id",
+            "url": "http://localhost:3000/api/usuarios/65cd40f6c0e0f5292ef24072",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-14T22:41:15.039Z",
+            "modified": "2024-02-14T22:41:44.339Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e761773a-bf61-4e3b-b6ef-67028e2c4440",
+            "colId": "ea2dd4e4-20a3-49d3-8d2c-4aa26a72bc9a",
+            "containerId": "",
+            "name": "put usuario",
+            "url": "http://localhost:3000/api/usuarios/65cd40f6c0e0f5292ef24072",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-14T22:42:12.053Z",
+            "modified": "2024-02-14T22:46:34.484Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Jose\",\n  \"role\": \"MAESTRO_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c19cfa53-fff7-45e3-bab5-c91734495670",
+            "colId": "ea2dd4e4-20a3-49d3-8d2c-4aa26a72bc9a",
+            "containerId": "",
+            "name": "delete request",
+            "url": "http://localhost:3000/api/usuarios/65cd40f6c0e0f5292ef24072",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-14T22:44:45.731Z",
+            "modified": "2024-02-14T22:47:24.219Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": ""
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
