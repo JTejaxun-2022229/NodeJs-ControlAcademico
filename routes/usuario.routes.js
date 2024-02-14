@@ -29,7 +29,7 @@ router.put(
 router.post(
     "/",
     [
-        check("Nombre", "El nombre no puede estar vacio").not().isEmpty(),
+        check("nombre", "El nombre no puede estar vacio").not().isEmpty(),
         check("password","El password debe ser mayot a 6 caracteres"),
         check("correo","Este no es un correo valido").isEmail(),
         check("correo").custom(existenteEmail),
