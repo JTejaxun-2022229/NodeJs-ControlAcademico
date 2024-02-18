@@ -4,6 +4,9 @@ const CursoSchema = Schema ({
     curso:{
         type: String,
         require: [true, 'Un curso es obligatorio']
+    },
+    estudiante:{
+        type: Array,
     }
 });
 
