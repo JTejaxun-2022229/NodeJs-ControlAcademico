@@ -19,7 +19,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"test15\",\n  \"correo\": \"test15@gmail.com\",\n  \"password\": \"123456\",\n  \"role\": \"USER_ROLE\"\n}",
+                "raw": "{\n  \"nombre\":\"Daniel\",\n  \"correo\": \"daniel@gmail.com\",\n  \"password\": \"123456\",\n  \"role\": \"ESTUDIANTE_ROLE\"\n}",
                 "form": []
             },
             "tests": []
@@ -66,7 +66,7 @@
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Braulio Echeverria\",\n  \"correo\":\"braulioecheverria@kinal.org.gt\",\n  \"role\":\"ADMIN_ROLE\"\n}",
+                "raw": "{\n  \"nombre\":\"Jose Tejaxun\",\n  \"correo\":\"danieltejaxun@kinal.org.gt\",\n  \"role\":\"ADMIN_ROLE\"\n}",
                 "form": []
             },
             "tests": []

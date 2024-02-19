@@ -1,6 +1,6 @@
 const { Router } = require('express');
-const { check, validationResult } = require('express-validator');
-const { validarCampos, validarJWT, esAdminRole, tieneRolAutorizado } = require('../middlewares');
+const { check } = require('express-validator');
+const { validarCampos, validarJWT, tieneRolAutorizado } = require('../middlewares');
 
 const {
     cursoPost,
@@ -8,6 +8,7 @@ const {
     getCursoById,
     putCurso,
     cursoDelete } = require('../controllers/curso.Controller');
+const { existeCursoById, existenteCurso} = require('../helpers/db-validators');
 
 const router = Router();
 
@@ -17,6 +18,7 @@ router.get(
     "/:id",
     [
         check('id', 'No es un id valido').isMongoId(),
+        check('id').custom(existeCursoById),
         validarCampos
     ], getCursoById
 );
@@ -25,6 +27,7 @@ router.put(
     "/:id",
     [
         check('id', 'No es un id valido').isMongoId(),
+        check('id').custom(existeCursoById),
         validarCampos
     ], putCurso
 )
@@ -32,7 +35,10 @@ router.put(
 router.post(
     "/",
     [
+        validarJWT,
+        tieneRolAutorizado('MAESTRO_ROLE'),
         check("nombre", "El nombre no puede estar vacio").not().isEmpty(),
+        //check("nombre").custom(existenteCurso),
         validarCampos
     ], cursoPost
 );
@@ -43,6 +49,7 @@ router.delete(
         validarJWT,
         tieneRolAutorizado('MAESTRO_ROLE'),
         check('id', 'No es un id valido').isMongoId(),
+        check('id').custom(existeCursoById),
         validarCampos
     ], cursoDelete
 );

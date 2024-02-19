@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
-const { validarCampos, validarJWT, esAdminRole, tieneRolAutorizado } = require('../middlewares');
+const { validarCampos, validarJWT, tieneRolAutorizado } = require('../middlewares');
 
 const { 
     usuariosPost,
@@ -26,6 +26,8 @@ router.get(
 router.put(
     "/:id",
     [
+        validarJWT,
+        tieneRolAutorizado('MAESTRO_ROLE'),
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeUsuarioById),
         check("role").custom(esRoleValido),

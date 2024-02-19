@@ -30,20 +30,21 @@ const getCursoById = async (req, res) => {
 
 const putCurso = async (req, res = response) => {
     const { id } = req.params;
-    await Curso.findByIdAndUpdate(id);
-    const curso = curso.findOne({ id });
-    const usuarioAutenticado = req.usuario
+    const {_id, ...resto} = req.body;
+
+    const curso = await Curso.findByIdAndUpdate(id, resto);
 
     res.status(200).json({
         msg: "Curso Actualizado",
-        usuarioAutenticado
+        curso
     });
 }
 
 const cursoDelete = async (req, res) => {
     const { id } = req.params;
     const curso = await Curso.findByIdAndUpdate(id, { estado: false });
-
+    const usuarioAutenticado = req.usuario;
+    
     res.status(200).json({
         msg: 'Curso a eliminar',
         curso,
