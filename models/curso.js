@@ -1,12 +1,18 @@
 const {Schema, model} = require('mongoose')
 
 const CursoSchema = Schema ({
-    curso:{
+    nombre:{
         type: String,
-        require: [true, 'Un curso es obligatorio']
+        require: [true, 'Un curso es obligatorio'],
+        unique: true
     },
     estudiante:{
-        type: Array,
+        type: String,
+        enum: []
+    },
+    estado:{
+        type: Boolean,
+        default: true
     }
 });
 

@@ -40,14 +40,14 @@ router.post(
         check("correo","Este no es un correo válido").isEmail(),
         check("correo").custom(existenteEmail),
         check("role").custom(esRoleValido),
-        validarCampos,
+        validarCampos
     ], usuariosPost);
 
 router.delete(
     "/:id",
     [   
         validarJWT,
-        tieneRolAutorizado('ADMIN_ROLE','SUPER_ROLE'),
+        tieneRolAutorizado('MAESTRO_ROLE'),
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeUsuarioById),
         validarCampos

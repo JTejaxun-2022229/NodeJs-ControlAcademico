@@ -14,13 +14,17 @@ const UsuarioSchema = Schema({
         type: String,
         required: [true, 'La contraseña es obligatoria']
     },
+    curso:{
+        type: String,
+        enum: []
+    },
     img:{
         type: String
     },
     role:{
         type: String,
         require: true,
-        enum: ["ADMIN_ROLE", "USER_ROLE"]
+        enum: ["MAESTRO_ROLE", "ESTUDIANTE_ROLE"]
     },
     estado:{
         type: Boolean,
