@@ -1,0 +1,94 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "cursoColeccion",
+    "dateExported": "2024-02-19T03:00:14.354Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1512142d-3479-471a-abda-fedfba597249",
+            "colId": "3c2d73c3-b48d-49a9-8e00-84998161baf9",
+            "containerId": "",
+            "name": "post curso",
+            "url": "http://localhost:3000/api/curso",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-19T00:17:39.256Z",
+            "modified": "2024-02-19T01:07:19.026Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"nombre\": \"biologia\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "956f9a18-b09b-4245-80b6-9e0367da854d",
+            "colId": "3c2d73c3-b48d-49a9-8e00-84998161baf9",
+            "containerId": "",
+            "name": "get curso",
+            "url": "http://localhost:3000/api/curso",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-19T00:19:15.834Z",
+            "modified": "2024-02-19T00:19:27.387Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "175b193a-983e-40f4-b8c2-ffc5baf1875d",
+            "colId": "3c2d73c3-b48d-49a9-8e00-84998161baf9",
+            "containerId": "",
+            "name": "get Curso By Id",
+            "url": "http://localhost:3000/api/curso/65d2ad1e1cd840bef32b08",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-19T00:22:21.860Z",
+            "modified": "2024-02-19T01:23:25.084Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "df4ef60b-596b-4e63-b3e3-8384f4c73d5b",
+            "colId": "3c2d73c3-b48d-49a9-8e00-84998161baf9",
+            "containerId": "",
+            "name": "put Curso",
+            "url": "http://localhost:3000/api/curso/65d29e3ebf0b7afcbab34f03",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-02-19T00:24:38.718Z",
+            "modified": "2024-02-19T00:25:10.838Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"Lenguaje\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4740af33-a4bb-4295-bbc0-ca4c0d222c25",
+            "colId": "3c2d73c3-b48d-49a9-8e00-84998161baf9",
+            "containerId": "",
+            "name": "delete Curso",
+            "url": "http://localhost:3000/api/curso/65d2af6cd6d213da8424d7ef",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2024-02-19T00:25:55.932Z",
+            "modified": "2024-02-19T02:54:32.416Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWQyYmNjZTJlNjM5YWM5ZTRiYzIwNjgiLCJpYXQiOjE3MDgzMTEyNDQsImV4cCI6MTcwODM5NzY0NH0.dk8jwInC6SfIhifxj-tW2dqfwmVhbki0EQKhg6ad83Q"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
