@@ -62,7 +62,7 @@ const estudiantePost = async (req, res) => {
     await estudiante.save();
     res.status(202).json({
         msg: 'Estudiante creado',
-        estudiante,
+        estudiante
     });
 }
 

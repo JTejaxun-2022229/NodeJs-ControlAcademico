@@ -1,0 +1,56 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "coleccion profesor",
+    "dateExported": "2024-02-27T20:27:16.605Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "1124c11d-8b2e-4a3b-b0ab-e0f70364fbe9",
+            "colId": "4bec9586-6f1e-4631-96e3-270e7d08d1bc",
+            "containerId": "",
+            "name": "post profesor",
+            "url": "http://localhost:3000/api/profesores",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-27T20:23:38.072Z",
+            "modified": "2024-02-27T20:25:44.315Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Braulio Echeverria\",\n  \"correo\": \"jbond@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d9893d01-f666-4e92-a0b4-2cd6fe74f095",
+            "colId": "4bec9586-6f1e-4631-96e3-270e7d08d1bc",
+            "containerId": "",
+            "name": "get profesores",
+            "url": "http://localhost:3000/api/profesores",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-27T20:25:54.449Z",
+            "modified": "2024-02-27T20:25:58.274Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "666add59-cee6-4754-b2c0-ffa892423351",
+            "colId": "4bec9586-6f1e-4631-96e3-270e7d08d1bc",
+            "containerId": "",
+            "name": "get profesor by id",
+            "url": "http://localhost:3000/api/profesores/65de452f6a6fe0eeff9bf346",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-27T20:26:23.648Z",
+            "modified": "2024-02-27T20:26:29.436Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

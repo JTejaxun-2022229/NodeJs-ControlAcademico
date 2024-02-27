@@ -1,7 +1,7 @@
 const Role = require('../models/role');
 const Curso = require('../models/curso')
 const Estudiante = require('../models/estudiante');
-//const Profesor = require('../models/profesor');
+const Profesor = require('../models/profesor');
 const Usuario = require('../models/usuario');
 
 const esRoleValido = async (role = '') => {
@@ -31,7 +31,6 @@ const existeUsuarioById = async (id = '') => {
         throw new Error(`El usuario con el ${id} no existe`)
     }
 }
-
 
 const existeEstudianteById = async (id = '') => {
     const existeEstudiante = await Estudiante.findOne({ id });

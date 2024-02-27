@@ -7,7 +7,7 @@ const {
     getEstudianteById,
     putEstudiante,
     estudianteDelete } = require('../controllers/estudiante.controller');
-const { existenteEmail, existeUsuarioById } = require('../helpers/db-validators');
+const { existenteEmail, existeEstudianteById } = require('../helpers/db-validators');
 
 const router = Router();
 
@@ -17,7 +17,7 @@ router.get(
     "/:id",
     [
         check('id', 'No es un id válido').isMongoId(),
-        check('id').custom(existeUsuarioById),
+        check('id').custom(existeEstudianteById),
         validarCampos
     ], getEstudianteById
 );
@@ -28,7 +28,7 @@ router.put(
         validarJWT,
         tieneRolAutorizado('ESTUDIANTE_ROLE'),
         check('id', 'No es un id valido').isMongoId(),
-        check('id').custom(existeUsuarioById),
+        check('id').custom(existeEstudianteById),
         validarCampos
     ], putEstudiante
 );
@@ -50,8 +50,9 @@ router.delete(
         validarJWT,
         tieneRolAutorizado('ESTUDIANTE_ROLE'),
         check('id', 'No es un id válido').isMongoId(),
-        check('id').custom(existeUsuarioById),
+        check('id').custom(existeEstudianteById),
         validarCampos
-    ], estudianteDelete);
+    ], estudianteDelete
+);
 
 module.exports = router;
