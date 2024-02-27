@@ -1,19 +1,17 @@
 const { Router } = require('express');
 const { check } = require('express-validator');
 const { validarCampos, validarJWT, tieneRolAutorizado } = require('../middlewares');
-
 const {
-    usuariosPost,
-    usuariosGet,
-    getUsuarioById,
-    putUsuarios,
-    usuariosDelete } = require('../controllers/usuario.controller');
-
-const { existenteEmail, esRoleValido, existeUsuarioById } = require('../helpers/db-validators');
+    estudiantePost,
+    estudianteGet,
+    getEstudianteById,
+    putEstudiante,
+    estudianteDelete } = require('../controllers/estudiante.controller');
+const { existenteEmail, existeUsuarioById } = require('../helpers/db-validators');
 
 const router = Router();
 
-router.get("/", usuariosGet);
+router.get("/", estudianteGet)
 
 router.get(
     "/:id",
@@ -21,18 +19,19 @@ router.get(
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeUsuarioById),
         validarCampos
-    ], getUsuarioById);
+    ], getEstudianteById
+);
 
 router.put(
     "/:id",
     [
         validarJWT,
-        tieneRolAutorizado('MAESTRO_ROLE'),
-        check('id', 'No es un id válido').isMongoId(),
+        tieneRolAutorizado('ESTUDIANTE_ROLE'),
+        check('id', 'No es un id valido').isMongoId(),
         check('id').custom(existeUsuarioById),
-        check("role").custom(esRoleValido),
         validarCampos
-    ], putUsuarios);
+    ], putEstudiante
+);
 
 router.post(
     "/",
@@ -41,19 +40,18 @@ router.post(
         check("password", "El password debe ser mayor a 6 caracteres").isLength({ min: 6 }),
         check("correo", "Este no es un correo válido").isEmail(),
         check("correo").custom(existenteEmail),
-        check("role").custom(esRoleValido),
         validarCampos
-    ], usuariosPost);
+    ], estudiantePost
+);
 
 router.delete(
     "/:id",
     [
         validarJWT,
-        tieneRolAutorizado('MAESTRO_ROLE'),
+        tieneRolAutorizado('ESTUDIANTE_ROLE'),
         check('id', 'No es un id válido').isMongoId(),
         check('id').custom(existeUsuarioById),
         validarCampos
-    ], usuariosDelete
-);
+    ], estudianteDelete);
 
 module.exports = router;

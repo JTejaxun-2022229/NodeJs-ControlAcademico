@@ -1,0 +1,89 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "coleccion estudiantes",
+    "dateExported": "2024-02-27T20:07:30.910Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "93344e67-0690-495a-8ba7-60489dcbfb54",
+            "colId": "46a86681-dfcd-4e25-8bdd-68aba61c8678",
+            "containerId": "",
+            "name": "post estudiante",
+            "url": "http://localhost:3000/api/estudiantes",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-02-27T19:48:11.963Z",
+            "modified": "2024-02-27T19:52:19.845Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Jose Tejaxun\",\n  \"correo\": \"jtejaxun123@gmail.com\",\n  \"password\": \"123456\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "93b03c71-8915-447a-b634-fb113fec531c",
+            "colId": "46a86681-dfcd-4e25-8bdd-68aba61c8678",
+            "containerId": "",
+            "name": "get estudiantes",
+            "url": "http://localhost:3000/api/estudiantes",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-02-27T19:56:56.248Z",
+            "modified": "2024-02-27T19:57:01.727Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "55509128-1dbf-49e6-9e21-e5be378f08ba",
+            "colId": "46a86681-dfcd-4e25-8bdd-68aba61c8678",
+            "containerId": "",
+            "name": "get estudiante by id",
+            "url": "http://localhost:3000/api/estudiantes/65de3d7382a90e1b6af1a4f9",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-02-27T19:58:08.582Z",
+            "modified": "2024-02-27T20:05:00.670Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "04c88e67-a525-4bb7-8b38-6e29de34d103",
+            "colId": "46a86681-dfcd-4e25-8bdd-68aba61c8678",
+            "containerId": "",
+            "name": "put estudiante",
+            "url": "http://localhost:3000/api/estudiantes/65de3d7382a90e1b6af1a4f9",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-02-27T20:05:57.468Z",
+            "modified": "2024-02-27T20:06:45.435Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Esteban\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a2d6d7cb-4d04-4333-9ae6-b88cee8c90e5",
+            "colId": "46a86681-dfcd-4e25-8bdd-68aba61c8678",
+            "containerId": "",
+            "name": "delete estudiante",
+            "url": "http://localhost:3000/api/estudiantes/65de3d7382a90e1b6af1a4f9",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-02-27T20:07:18.967Z",
+            "modified": "2024-02-27T20:07:26.080Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
