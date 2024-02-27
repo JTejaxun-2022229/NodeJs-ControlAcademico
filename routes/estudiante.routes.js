@@ -7,7 +7,7 @@ const {
     getEstudianteById,
     putEstudiante,
     estudianteDelete } = require('../controllers/estudiante.controller');
-const { existenteEmail, existeEstudianteById } = require('../helpers/db-validators');
+const { existenteEmailEstudiante, existeEstudianteById, existenteEmailEstudiante } = require('../helpers/db-validators');
 
 const router = Router();
 
@@ -39,7 +39,7 @@ router.post(
         check("nombre", "El nombre no puede estar vacío").not().isEmpty(),
         check("password", "El password debe ser mayor a 6 caracteres").isLength({ min: 6 }),
         check("correo", "Este no es un correo válido").isEmail(),
-        check("correo").custom(existenteEmail),
+        check("correo").custom(existenteEmailEstudiante),
         validarCampos
     ], estudiantePost
 );

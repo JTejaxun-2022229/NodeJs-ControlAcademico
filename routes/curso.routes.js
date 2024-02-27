@@ -36,7 +36,7 @@ router.post(
     "/",
     [
         validarJWT,
-        tieneRolAutorizado('MAESTRO_ROLE'),
+        tieneRolAutorizado('PROFESOR_ROLE'),
         check("nombre", "El nombre no puede estar vacio").not().isEmpty(),
         //check("nombre").custom(existenteCurso),
         validarCampos

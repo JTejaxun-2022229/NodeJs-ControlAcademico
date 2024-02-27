@@ -10,12 +10,20 @@ const esRoleValido = async (role = '') => {
     }
 }
 
-const existenteEmail = async (correo = '') => {
-    const existeEmail = await Usuario.findOne({ correo });
-    if (existeEmail) {
+const existenteEmailEstudiante = async (correo = '') => {
+    const existeEstudianteEmail = await Estudiante.findOne({ correo });
+    if (existeEstudianteEmail) {
         throw new Error(`El correo ${correo} ya está registrado`);
     }
 }
+
+const existenteEmailProfesor = async (correo = '') => {
+    const existeProfesorEmail = await Profesor.findOne({ correo });
+    if (existeProfesorEmail) {
+        throw new Error(`El correo ${correo} ya está registrado`);
+    }
+}
+
 
 const existenteCurso = async (curso = '') => {
     const existeCurso = await Curso.findOne({ nombre });
@@ -48,13 +56,14 @@ const existeProfesorById = async (id = '') => {
 const existeCursoById = async (id = '') => {
     const existeCurso = await Curso.findOne({ id });
     if (existeCurso) {
-        throw new Error(`El curos con el ${id} no existe`)
+        throw new Error(`El curso con el ${id} no existe`)
     }
 }
 
 module.exports = {
     esRoleValido,
-    existenteEmail,
+    existenteEmailEstudiante,
+    existenteEmailProfesor,
     existeUsuarioById,
     existeEstudianteById,
     existeProfesorById,
