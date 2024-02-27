@@ -2,7 +2,6 @@ const Role = require('../models/role');
 const Curso = require('../models/curso')
 const Estudiante = require('../models/estudiante');
 const Profesor = require('../models/profesor');
-const Usuario = require('../models/usuario');
 
 const esRoleValido = async (role = '') => {
     const existeRol = await Role.findOne({ role });

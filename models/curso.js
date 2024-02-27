@@ -1,5 +1,4 @@
 const {Schema, model} = require('mongoose');
-const { putUsuarios } = require('../controllers/usuario.controller');
 
 const CursoSchema = Schema ({
     nombre:{
@@ -8,7 +7,7 @@ const CursoSchema = Schema ({
         unique: true
     },
     estudiante:{
-        type: String
+        type: Array
     },
     estado:{
         type: Boolean,
