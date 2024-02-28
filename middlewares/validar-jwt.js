@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const Estudiante = require('../models/estudiante');
+const Usuario = require('../models/usuario');
 const { request, response } = require('express');
 
 const validarJWT = async(req = request, res = response, next)=> {
@@ -13,21 +13,21 @@ const validarJWT = async(req = request, res = response, next)=> {
 
     try{
         const { uid } = jwt.verify(token, process.env.SECRETPRIVATEKEY);
-        const estudiante = await Estudiante.findById(uid);
+        const usuario = await Usuario.findById(uid);
 
-        if(!estudiante){
+        if(!usuario){
             return res.status(401).json({
-                msg: "Estudiante no existe en la base de datos"
+                msg: "Usuario no existe en la base de datos"
             });
         }
 
-        if(!estudiante.estado){
+        if(!usuario.estado){
             return res.status(401).json({
                 msg: "Token no válido, usuario con estado false"
             });
         }
 
-        req.estudiante = estudiante;
+        req.usuario = usuario;
         next();
         
     }catch(e){

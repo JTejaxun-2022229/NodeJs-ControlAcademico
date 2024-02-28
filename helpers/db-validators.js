@@ -1,7 +1,6 @@
 const Role = require('../models/role');
 const Curso = require('../models/curso')
-const Estudiante = require('../models/estudiante');
-const Profesor = require('../models/profesor');
+const Usuario = require('../models/usuario');
 
 const esRoleValido = async (role = '') => {
     const existeRol = await Role.findOne({ role });
@@ -10,20 +9,12 @@ const esRoleValido = async (role = '') => {
     }
 }
 
-const existenteEmailEstudiante = async (correo = '') => {
-    const existeEstudianteEmail = await Estudiante.findOne({ correo });
-    if (existeEstudianteEmail) {
+const existenteEmail = async (correo = '') => {
+    const existeEmail = await Usuario.findOne({ correo });
+    if (existeEmail) {
         throw new Error(`El correo ${correo} ya está registrado`);
     }
 }
-
-const existenteEmailProfesor = async (correo = '') => {
-    const existeProfesorEmail = await Profesor.findOne({ correo });
-    if (existeProfesorEmail) {
-        throw new Error(`El correo ${correo} ya está registrado`);
-    }
-}
-
 
 const existenteCurso = async (curso = '') => {
     const existeCurso = await Curso.findOne({ nombre });
@@ -39,34 +30,17 @@ const existeUsuarioById = async (id = '') => {
     }
 }
 
-const existeEstudianteById = async (id = '') => {
-    const existeEstudiante = await Estudiante.findOne({ id });
-    if (existeEstudiante) {
-        throw new Error(`El estudiante con el ${id} no existe`)
-    }
-}
-
-const existeProfesorById = async (id = '') => {
-    const existeProfesor = await Profesor.findOne({ id });
-    if (existeProfesor) {
-        throw new Error(`El profesor con el ${id} no existe`)
-    }
-}
-
 const existeCursoById = async (id = '') => {
     const existeCurso = await Curso.findOne({ id });
     if (existeCurso) {
-        throw new Error(`El curso con el ${id} no existe`)
+        throw new Error(`El curos con el ${id} no existe`)
     }
 }
 
 module.exports = {
     esRoleValido,
-    existenteEmailEstudiante,
-    existenteEmailProfesor,
+    existenteEmail,
     existeUsuarioById,
-    existeEstudianteById,
-    existeProfesorById,
     existenteCurso,
     existeCursoById
 }
