@@ -36,7 +36,7 @@ router.post(
     "/",
     [
         validarJWT,
-        tieneRolAutorizado('MAESTRO_ROLE'),
+        tieneRolAutorizado('PROFESOR_ROLE'),
         check("nombre", "El nombre no puede estar vacio").not().isEmpty(),
         //check("nombre").custom(existenteCurso),
         validarCampos
@@ -47,7 +47,7 @@ router.delete(
     "/:id",
     [
         validarJWT,
-        tieneRolAutorizado('MAESTRO_ROLE'),
+        tieneRolAutorizado('PROFESOR_ROLE'),
         check('id', 'No es un id valido').isMongoId(),
         check('id').custom(existeCursoById),
         validarCampos
