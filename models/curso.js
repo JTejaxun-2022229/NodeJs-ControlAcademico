@@ -8,7 +8,8 @@ const CursoSchema = Schema ({
         unique: true
     },
     estudiante:{
-        type: String
+        type: Array,
+        default: []
     },
     estado:{
         type: Boolean,
