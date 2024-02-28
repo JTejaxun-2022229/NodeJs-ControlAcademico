@@ -1,6 +1,1 @@
-Al momento de iniciar sesion, dependiendo del usuario si es maestro o estudiante tendra diferentes permisos,
-es necesario entrar en rol maestro para crear, eliminar cursos
-para editar cursos ambos roles lo pueden hacer asi es como un estudiante se asigna a un curso,
-y para editar usuarios es necesario tener rol maestro.
-
-la autenticacion se hace por rol  y por token que se coloca en el header como x-token.
+Al momento de ejecutar el proyecto, de forma automatica se agregaran dos roles que son: PROFESOR_ROLE, ESTUDIANTE_ROLE que son que puede y se usaran para realizar las respectivas operaciones por rol, si bien se agrega de forma automatica a la base de datos se debe asignar de manera manula uno de estos roles al crear un usuario.
